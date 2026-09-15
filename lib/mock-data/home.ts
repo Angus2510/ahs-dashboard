@@ -1,0 +1,214 @@
+import {
+  OverviewMetric,
+  BookingToWatchItem,
+  RecentActivityItem,
+  QuickLinkItem,
+  ActionListItem,
+} from "@/types/dashboard"
+
+export const overviewMetrics: OverviewMetric[] = [
+  {
+    id: "active-conversations",
+    title: "Active Conversations",
+    value: "24",
+    trend: "↑ 3 from last week",
+    isPositive: true,
+    icon: "conversations",
+  },
+  {
+    id: "bookings-to-watch",
+    title: "Bookings to Watch",
+    value: "7",
+    trend: "↑ 2 from last week",
+    isPositive: true,
+    icon: "watchlist",
+  },
+  {
+    id: "actions-due",
+    title: "Actions Due",
+    value: "5",
+    trend: "↓ 3 from last week",
+    isPositive: false,
+    icon: "actions",
+  },
+  {
+    id: "current-opportunities",
+    title: "Current Opportunities",
+    value: "18",
+    trend: "↑ 4 from last week",
+    isPositive: true,
+    icon: "opportunities",
+  },
+  {
+    id: "pipeline-value",
+    title: "Pipeline Value",
+    value: "USD 342,000",
+    trend: "↑ 12% from last week",
+    isPositive: true,
+    icon: "pipeline",
+  },
+]
+
+export const bookingsToWatchData: BookingToWatchItem[] = [
+  {
+    id: "btw-1",
+    client: "Sondus",
+    destination: "Okavango Delta",
+    subtitle: "High value • Decision pending",
+    value: "USD 18,500",
+    date: "Nov 2026",
+    starred: true,
+    reason: "High Value",
+    imageGradient: "from-[#4a5843] to-[#2c3626]",
+  },
+  {
+    id: "btw-2",
+    client: "Catherine Family",
+    destination: "South Africa",
+    subtitle: "Group of 6 • Proposal sent",
+    value: "USD 12,400",
+    date: "Dec 2027",
+    starred: true,
+    reason: "Complicated Itinerary",
+    imageGradient: "from-[#7d7159] to-[#423927]",
+  },
+  {
+    id: "btw-3",
+    client: "Justin Family",
+    destination: "Macatoo",
+    subtitle: "Family with teens • Planning",
+    value: "USD 9,800",
+    date: "Mar 2027",
+    starred: false,
+    reason: "Client Attention",
+    imageGradient: "from-[#636c56] to-[#3a4130]",
+  },
+  {
+    id: "btw-4",
+    client: "Emily",
+    destination: "Kenya (Sosian)",
+    subtitle: "Exploring options • Follow up needed",
+    value: "USD 7,200",
+    date: "Apr 2027",
+    starred: false,
+    reason: "At Risk",
+    imageGradient: "from-[#576450] to-[#2f3929]",
+  },
+]
+
+export const recentActivityData: RecentActivityItem[] = [
+  {
+    id: "act-1",
+    initial: "F",
+    actor: "Fathom",
+    action: "Meeting summary added (Ashley 1:1)",
+    time: "2h ago",
+    category: "fathom",
+  },
+  {
+    id: "act-2",
+    initial: "G",
+    actor: "GHL",
+    action: "New opportunity moved to Proposal",
+    time: "3h ago",
+    category: "ghl",
+  },
+  {
+    id: "act-3",
+    initial: "P",
+    actor: "Client",
+    action: "Replied to proposal – Sondus",
+    time: "5h ago",
+    category: "client",
+  },
+  {
+    id: "act-4",
+    initial: "A",
+    actor: "Charianne",
+    action: "Added reservation update (Bushwillow)",
+    time: "6h ago",
+    category: "internal",
+  },
+  {
+    id: "act-5",
+    initial: "A",
+    actor: "Ashley",
+    action: "Completed action item",
+    time: "7h ago",
+    category: "internal",
+  },
+]
+
+export const quickLinksData: QuickLinkItem[] = [
+  {
+    id: "ql-1",
+    label: "New Opportunity",
+    href: "/ashley-sales/pipeline",
+    icon: "plus",
+  },
+  {
+    id: "ql-2",
+    label: "Create Reservation Update",
+    href: "/reservations",
+    icon: "calendar",
+  },
+  {
+    id: "ql-3",
+    label: "View Reports",
+    href: "/reports",
+    icon: "report",
+  },
+  {
+    id: "ql-4",
+    label: "Open GoHighLevel",
+    href: "https://highlevel.com",
+    icon: "ghl",
+    isExternal: true,
+  },
+  {
+    id: "ql-5",
+    label: "Open Fathom",
+    href: "https://fathom.video",
+    icon: "fathom",
+    isExternal: true,
+  },
+]
+
+export const actionListData: ActionListItem[] = [
+  {
+    id: "act-item-1",
+    task: "Follow up with Emily (Kenya)",
+    priority: "High",
+    dueDate: "Today",
+    completed: false,
+  },
+  {
+    id: "act-item-2",
+    task: "Send proposal to Catherine",
+    priority: "High",
+    dueDate: "Today",
+    completed: false,
+  },
+  {
+    id: "act-item-3",
+    task: "Confirm invoice for Sondus",
+    priority: "Medium",
+    dueDate: "Tomorrow",
+    completed: false,
+  },
+  {
+    id: "act-item-4",
+    task: "Check in with Ashley",
+    priority: "Medium",
+    dueDate: "Tomorrow",
+    completed: false,
+  },
+  {
+    id: "act-item-5",
+    task: "Update reservations notes",
+    priority: "Low",
+    dueDate: "Wed 18 Sep",
+    completed: false,
+  },
+]
+

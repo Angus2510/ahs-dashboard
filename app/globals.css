@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1e231d;
+  --card: #ffffff;
+  --card-foreground: #1e231d;
+  --popover: #ffffff;
+  --popover-foreground: #1e231d;
+  --primary: #4a5441;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f2eb;
+  --secondary-foreground: #2d3427;
+  --muted: #eff1eb;
+  --muted-foreground: #6c7365;
+  --accent: #e8ece1;
+  --accent-foreground: #2d3427;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: #e2e5dc;
+  --input: #e2e5dc;
+  --ring: #6b775c;
+  --radius: 0.5rem;
+
+  /* Custom Sidebar Colors */
+  --sidebar-bg: #303629;
+  --sidebar-surface: #3b4233;
+  --sidebar-hover: #434c3a;
+  --sidebar-active: #4d5743;
+  --sidebar-text: #f0f2eb;
+  --sidebar-text-muted: #9ba492;
+  --sidebar-border: #444c3b;
+
+  --khaki-50: #f7f8f5;
+  --khaki-100: #eef1ea;
+  --khaki-200: #dbe0d3;
+  --khaki-300: #c2cab7;
+  --khaki-400: #9faa8f;
+  --khaki-500: #7e8b6d;
+  --khaki-600: #626e53;
+  --khaki-700: #4c5641;
+  --khaki-800: #3f4736;
+  --khaki-900: #353b2e;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
