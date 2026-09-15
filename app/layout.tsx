@@ -4,7 +4,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AHS Sales & Reservations Hub",
-  description: "Internal management hub for sales, 1:1s, reservations, and goals.",
+  description:
+    "Internal management hub for sales, 1:1s, reservations, and goals.",
 };
 
 export default function RootLayout({

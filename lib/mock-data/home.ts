@@ -4,7 +4,7 @@ import {
   RecentActivityItem,
   QuickLinkItem,
   ActionListItem,
-} from "@/types/dashboard"
+} from "@/types/dashboard";
 
 export const overviewMetrics: OverviewMetric[] = [
   {
@@ -47,7 +47,7 @@ export const overviewMetrics: OverviewMetric[] = [
     isPositive: true,
     icon: "pipeline",
   },
-]
+];
 
 export const bookingsToWatchData: BookingToWatchItem[] = [
   {
@@ -94,7 +94,7 @@ export const bookingsToWatchData: BookingToWatchItem[] = [
     reason: "At Risk",
     imageGradient: "from-[#576450] to-[#2f3929]",
   },
-]
+];
 
 export const recentActivityData: RecentActivityItem[] = [
   {
@@ -137,7 +137,7 @@ export const recentActivityData: RecentActivityItem[] = [
     time: "7h ago",
     category: "internal",
   },
-]
+];
 
 export const quickLinksData: QuickLinkItem[] = [
   {
@@ -172,7 +172,7 @@ export const quickLinksData: QuickLinkItem[] = [
     icon: "fathom",
     isExternal: true,
   },
-]
+];
 
 export const actionListData: ActionListItem[] = [
   {
@@ -210,5 +210,4 @@ export const actionListData: ActionListItem[] = [
     dueDate: "Wed 18 Sep",
     completed: false,
   },
-]
-
+];

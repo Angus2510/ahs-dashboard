@@ -1,0 +1,148 @@
+import { Goal } from "@/types/goal";
+
+export const mockGoals: Goal[] = [
+  {
+    id: "goal-1",
+    category: "Personal Sales Goals",
+    title: "Q3 High-Value Safari Bookings",
+    description:
+      "Close high-net-worth safari itineraries exceeding USD 15,000 per booking.",
+    target: "$180,000",
+    current: "$142,500",
+    percentage: 79,
+    dueDate: "30 Sep 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-2",
+    category: "Personal Sales Goals",
+    title: "Enquiry-to-Proposal Conversion Velocity",
+    description:
+      "Maintain an average turnaround under 48 hours for bespoke safari proposals.",
+    target: "< 48 hrs",
+    current: "36 hrs avg",
+    percentage: 92,
+    dueDate: "Rolling Q3",
+    status: "Ahead",
+  },
+  {
+    id: "goal-3",
+    category: "Team Goals",
+    title: "Combined Q3 Hub Revenue",
+    description:
+      "Total confirmed safari booking revenue across Sales & Reservations.",
+    target: "$450,000",
+    current: "$342,000",
+    percentage: 76,
+    dueDate: "30 Sep 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-4",
+    category: "Team Goals",
+    title: "Partner Lodge Direct Relationship Coverage",
+    description:
+      "Establish dedicated contract & direct allocation agreements with partner properties.",
+    target: "40 Lodges",
+    current: "38 Lodges",
+    percentage: 95,
+    dueDate: "15 Oct 2026",
+    status: "Ahead",
+  },
+  {
+    id: "goal-5",
+    category: "Monthly Targets",
+    title: "September Booking Revenue",
+    description:
+      "Monthly revenue target for confirmed bookings with deposits cleared.",
+    target: "$120,000",
+    current: "$96,000",
+    percentage: 80,
+    dueDate: "30 Sep 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-6",
+    category: "Monthly Targets",
+    title: "Proposal Volume Sent",
+    description:
+      "Deliver bespoke safari itineraries to qualified inbound prospects.",
+    target: "20 Proposals",
+    current: "17 Sent",
+    percentage: 85,
+    dueDate: "30 Sep 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-7",
+    category: "Projects",
+    title: "GoHighLevel Pipeline Staging Template",
+    description:
+      "Refine stage automation triggers, client follow-up sequences, and task assignment logic.",
+    target: "100% Configured",
+    current: "60% Drafted",
+    percentage: 60,
+    dueDate: "15 Oct 2026",
+    status: "Needs Focus",
+  },
+  {
+    id: "goal-8",
+    category: "Projects",
+    title: "Digital Guest Welcome & Itinerary Portal",
+    description:
+      "Standardize client-facing safari mobile itinerary packs and digital vouchers.",
+    target: "100% Launch",
+    current: "45% Developed",
+    percentage: 45,
+    dueDate: "01 Nov 2026",
+    status: "Needs Focus",
+  },
+  {
+    id: "goal-9",
+    category: "Development Goals",
+    title: "East Africa Private Guiding & Wilderness Accreditation",
+    description:
+      "Complete certification modules for specialized photographic and walking safaris.",
+    target: "5 Modules",
+    current: "5 Modules",
+    percentage: 100,
+    dueDate: "10 Sep 2026",
+    status: "Completed",
+  },
+  {
+    id: "goal-10",
+    category: "Development Goals",
+    title: "Consultative Objection Coaching Framework",
+    description:
+      "Build internal playbook for overcoming green season pricing and charter objections.",
+    target: "Playbook v1.0",
+    current: "Draft Complete",
+    percentage: 80,
+    dueDate: "25 Sep 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-11",
+    category: "Long-Term Reservations / Operational Projects",
+    title: "2027/2028 Exclusive Camp Block Allocations",
+    description:
+      "Finalize long-term provisional hold terms with Singita, Wilderness, and Great Plains.",
+    target: "12 Properties",
+    current: "8 Finalized",
+    percentage: 67,
+    dueDate: "31 Dec 2026",
+    status: "On Track",
+  },
+  {
+    id: "goal-12",
+    category: "Long-Term Reservations / Operational Projects",
+    title: "Emergency Evacuation & Satellite Comms Standard",
+    description:
+      "Unify air ambulance coverage and satellite check-in protocols for all mobile expeditions.",
+    target: "Protocol Active",
+    current: "Under Review",
+    percentage: 50,
+    dueDate: "15 Nov 2026",
+    status: "Needs Focus",
+  },
+];

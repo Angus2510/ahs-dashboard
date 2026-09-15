@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Home,
   Search,
@@ -14,14 +14,14 @@ import {
   BarChart3,
   Sparkles,
   ChevronRight,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export interface NavItem {
-  name: string
-  href: string
-  icon: React.ElementType
-  children?: { name: string; href: string }[]
+  name: string;
+  href: string;
+  icon: React.ElementType;
+  children?: { name: string; href: string }[];
 }
 
 export const navigationItems: NavItem[] = [
@@ -39,25 +39,19 @@ export const navigationItems: NavItem[] = [
     name: "Weekly 1:1s",
     href: "/weekly-1-1s",
     icon: CalendarCheck2,
-    children: [
-      { name: "Ashley", href: "/weekly-1-1s/ashley" },
-    ],
+    children: [{ name: "Ashley", href: "/weekly-1-1s/ashley" }],
   },
   {
     name: "Ashley Sales",
     href: "/ashley-sales",
     icon: Users2,
-    children: [
-      { name: "Pipeline", href: "/ashley-sales/pipeline" },
-    ],
+    children: [{ name: "Pipeline", href: "/ashley-sales/pipeline" }],
   },
   {
     name: "Reservations Updates",
     href: "/reservations",
     icon: Compass,
-    children: [
-      { name: "Long-Term", href: "/reservations/long-term" },
-    ],
+    children: [{ name: "Long-Term", href: "/reservations/long-term" }],
   },
   {
     name: "Actions",
@@ -74,21 +68,21 @@ export const navigationItems: NavItem[] = [
     href: "/reports",
     icon: BarChart3,
   },
-]
+];
 
 interface SidebarProps {
-  className?: string
-  onItemClick?: () => void
+  className?: string;
+  onItemClick?: () => void;
 }
 
 export function Sidebar({ className, onItemClick }: SidebarProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <aside
       className={cn(
         "flex h-full w-64 flex-col justify-between bg-[#303629] text-[#e8ebe3] select-none",
-        className
+        className,
       )}
     >
       {/* Top Header / Branding */}
@@ -110,12 +104,14 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
         {/* Navigation Menu */}
         <nav className="mt-3 px-3 space-y-1">
           {navigationItems.map((item) => {
-            const Icon = item.icon
-            const isExactActive = pathname === item.href
+            const Icon = item.icon;
+            const isExactActive = pathname === item.href;
             const isChildActive =
-              item.children?.some((child) => pathname === child.href) ?? false
+              item.children?.some((child) => pathname === child.href) ?? false;
             const isActive =
-              item.href === "/" ? pathname === "/" : isExactActive || isChildActive
+              item.href === "/"
+                ? pathname === "/"
+                : isExactActive || isChildActive;
 
             return (
               <div key={item.name} className="space-y-0.5">
@@ -126,7 +122,7 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
                     "group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all duration-150",
                     isActive
                       ? "bg-[#454e3c] text-white shadow-xs font-semibold"
-                      : "text-[#b6beaf] hover:bg-[#3b4333] hover:text-[#f0f2eb]"
+                      : "text-[#b6beaf] hover:bg-[#3b4333] hover:text-[#f0f2eb]",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -135,7 +131,7 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
                         "h-4 w-4 transition-colors",
                         isActive
                           ? "text-[#e2e7dd]"
-                          : "text-[#8e9885] group-hover:text-[#d3dbcc]"
+                          : "text-[#8e9885] group-hover:text-[#d3dbcc]",
                       )}
                     />
                     <span>{item.name}</span>
@@ -144,7 +140,7 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
                     <ChevronRight
                       className={cn(
                         "h-3.5 w-3.5 transition-transform text-[#9ca793]",
-                        isActive ? "rotate-90 text-[#e2e7dd]" : ""
+                        isActive ? "rotate-90 text-[#e2e7dd]" : "",
                       )}
                     />
                   )}
@@ -155,11 +151,11 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
                   <div
                     className={cn(
                       "pl-9 pr-2 space-y-0.5 pb-1 pt-0.5",
-                      isActive ? "block" : "hidden"
+                      isActive ? "block" : "hidden",
                     )}
                   >
                     {item.children.map((child) => {
-                      const isChildCurrent = pathname === child.href
+                      const isChildCurrent = pathname === child.href;
                       return (
                         <Link
                           key={child.name}
@@ -169,23 +165,23 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
                             "flex items-center gap-2 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors",
                             isChildCurrent
                               ? "bg-[#525d48] text-white font-semibold"
-                              : "text-[#9ca793] hover:bg-[#3d4535] hover:text-[#e4ebe0]"
+                              : "text-[#9ca793] hover:bg-[#3d4535] hover:text-[#e4ebe0]",
                           )}
                         >
                           <span
                             className={cn(
                               "h-1.5 w-1.5 rounded-full",
-                              isChildCurrent ? "bg-[#d8e2cb]" : "bg-[#6d7962]"
+                              isChildCurrent ? "bg-[#d8e2cb]" : "bg-[#6d7962]",
                             )}
                           />
                           <span>{child.name}</span>
                         </Link>
-                      )
+                      );
                     })}
                   </div>
                 )}
               </div>
-            )
+            );
           })}
         </nav>
       </div>
@@ -201,10 +197,18 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M12 28 C12 22, 18 18, 22 14 C26 18, 32 22, 32 28 Z" opacity="0.6" />
+              <path
+                d="M12 28 C12 22, 18 18, 22 14 C26 18, 32 22, 32 28 Z"
+                opacity="0.6"
+              />
               <path d="M22 28 L22 34 L21 34 L21 28 Z" />
               <path d="M70 32 C68 28, 70 24, 76 22 C82 20, 88 22, 92 24 C95 22, 98 24, 99 27 C101 27, 103 29, 102 33 L100 34 L98 34 L97 30 L95 34 L93 34 L92 28 L86 34 L84 34 L85 27 L80 34 L78 34 Z" />
-              <path d="M0 35 L120 35" stroke="currentColor" strokeWidth="1" strokeDasharray="3 2" />
+              <path
+                d="M0 35 L120 35"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeDasharray="3 2"
+              />
             </svg>
           </div>
           <p className="font-serif text-[11px] italic tracking-wide text-[#dbe2d4]">
@@ -215,5 +219,5 @@ export function Sidebar({ className, onItemClick }: SidebarProps) {
         </div>
       </div>
     </aside>
-  )
+  );
 }

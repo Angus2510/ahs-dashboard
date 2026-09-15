@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Sidebar } from "./sidebar"
-import { Header } from "./header"
+import * as React from "react";
+import { Sidebar } from "./sidebar";
+import { Header } from "./header";
 
 interface AppShellProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function AppShell({ children }: AppShellProps) {
@@ -22,5 +22,5 @@ export function AppShell({ children }: AppShellProps) {
         </main>
       </div>
     </div>
-  )
+  );
 }

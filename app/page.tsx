@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
 import {
   Sun,
   Star,
@@ -15,94 +15,91 @@ import {
   Layers,
   CircleDollarSign,
   Compass,
-} from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   overviewMetrics,
   bookingsToWatchData,
   recentActivityData,
   quickLinksData,
   actionListData,
-} from "@/lib/mock-data/home"
-import { PriorityLevel } from "@/types/dashboard"
+} from "@/lib/mock-data/home";
+import { PriorityLevel } from "@/types/dashboard";
 
 function getMetricIcon(iconType: string) {
   switch (iconType) {
     case "conversations":
-      return <Users2 className="h-4 w-4 text-[#606c54]" />
+      return <Users2 className="h-4 w-4 text-[#606c54]" />;
     case "watchlist":
-      return <Star className="h-4 w-4 text-[#606c54]" />
+      return <Star className="h-4 w-4 text-[#606c54]" />;
     case "actions":
-      return <CalendarCheck2 className="h-4 w-4 text-[#606c54]" />
+      return <CalendarCheck2 className="h-4 w-4 text-[#606c54]" />;
     case "opportunities":
-      return <Layers className="h-4 w-4 text-[#606c54]" />
+      return <Layers className="h-4 w-4 text-[#606c54]" />;
     case "pipeline":
-      return <CircleDollarSign className="h-4 w-4 text-[#606c54]" />
+      return <CircleDollarSign className="h-4 w-4 text-[#606c54]" />;
     default:
-      return <Compass className="h-4 w-4 text-[#606c54]" />
+      return <Compass className="h-4 w-4 text-[#606c54]" />;
   }
 }
 
 function getQuickLinkIcon(iconType: string) {
   switch (iconType) {
     case "plus":
-      return <Plus className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <Plus className="h-3.5 w-3.5 text-[#5e6b52]" />;
     case "calendar":
-      return <Calendar className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <Calendar className="h-3.5 w-3.5 text-[#5e6b52]" />;
     case "report":
-      return <FileSpreadsheet className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <FileSpreadsheet className="h-3.5 w-3.5 text-[#5e6b52]" />;
     case "ghl":
-      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />;
     case "fathom":
-      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />;
     default:
-      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />
+      return <ExternalLink className="h-3.5 w-3.5 text-[#5e6b52]" />;
   }
 }
 
 function getPriorityBadgeClass(priority: PriorityLevel) {
   switch (priority) {
     case "High":
-      return "border-[#f6d0ca] bg-[#fbf0ee] text-[#a43b2d]"
+      return "border-[#f6d0ca] bg-[#fbf0ee] text-[#a43b2d]";
     case "Medium":
-      return "border-[#f0dec0] bg-[#faf5e9] text-[#875d1b]"
+      return "border-[#f0dec0] bg-[#faf5e9] text-[#875d1b]";
     case "Low":
-      return "border-[#dbe3d3] bg-[#f1f5ed] text-[#4d5942]"
+      return "border-[#dbe3d3] bg-[#f1f5ed] text-[#4d5942]";
     default:
-      return "border-[#dce1d6] bg-[#f0f2eb] text-[#4a5441]"
+      return "border-[#dce1d6] bg-[#f0f2eb] text-[#4a5441]";
   }
 }
 
 export default function HomePage() {
-  const [tasks, setTasks] = React.useState(actionListData)
-  const [starredBookings, setStarredBookings] = React.useState<Record<string, boolean>>({
+  const [tasks, setTasks] = React.useState(actionListData);
+  const [starredBookings, setStarredBookings] = React.useState<
+    Record<string, boolean>
+  >({
     "btw-1": true,
     "btw-2": true,
-  })
+  });
 
   const toggleTask = (id: string) => {
     setTasks((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
-      )
-    )
-  }
+        item.id === id ? { ...item, completed: !item.completed } : item,
+      ),
+    );
+  };
 
   const toggleStar = (id: string) => {
     setStarredBookings((prev) => ({
       ...prev,
       [id]: !prev[id],
-    }))
-  }
+    }));
+  };
 
-  const pendingTaskCount = tasks.filter((t) => !t.completed).length
+  const pendingTaskCount = tasks.filter((t) => !t.completed).length;
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
@@ -178,7 +175,8 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-4 pt-1 space-y-2.5">
               {bookingsToWatchData.map((booking) => {
-                const isStarred = starredBookings[booking.id] ?? booking.starred
+                const isStarred =
+                  starredBookings[booking.id] ?? booking.starred;
                 return (
                   <div
                     key={booking.id}
@@ -210,7 +208,9 @@ export default function HomePage() {
                         <p className="font-serif text-xs font-bold text-[#2d3427]">
                           {booking.value}
                         </p>
-                        <p className="text-[10px] text-[#868f7f]">{booking.date}</p>
+                        <p className="text-[10px] text-[#868f7f]">
+                          {booking.date}
+                        </p>
                       </div>
                       <button
                         onClick={() => toggleStar(booking.id)}
@@ -227,7 +227,7 @@ export default function HomePage() {
                       </button>
                     </div>
                   </div>
-                )
+                );
               })}
             </CardContent>
           </div>
@@ -259,7 +259,9 @@ export default function HomePage() {
                       <span className="font-semibold text-[#1c221a] text-xs">
                         {item.actor}
                       </span>
-                      <span className="text-[10px] text-[#8a9284]">{item.time}</span>
+                      <span className="text-[10px] text-[#8a9284]">
+                        {item.time}
+                      </span>
                     </div>
                     <p className="text-[11px] text-[#677060] leading-snug">
                       {item.action}
@@ -353,7 +355,7 @@ export default function HomePage() {
                       </p>
                       <span
                         className={`inline-flex items-center rounded-full border px-1.5 py-0.2 text-[9px] font-medium ${getPriorityBadgeClass(
-                          task.priority
+                          task.priority,
                         )}`}
                       >
                         {task.priority}
@@ -370,6 +372,5 @@ export default function HomePage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
-

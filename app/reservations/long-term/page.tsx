@@ -1,8 +1,14 @@
-import Link from "next/link"
-import { ArrowLeft, Calendar, Filter, MapPin } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { ArrowLeft, Calendar, Filter, MapPin } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const longTermReservations = [
   {
@@ -45,14 +51,19 @@ const longTermReservations = [
     depositDue: "30 Sept 2026",
     value: "$18,500",
   },
-]
+];
 
 export default function LongTermReservationsPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto">
       {/* Header & Back Link */}
       <div className="flex flex-col gap-3">
-        <Button asChild variant="ghost" size="sm" className="w-fit gap-1 text-[#6c7365] hover:text-[#1e231d] -ml-2">
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="w-fit gap-1 text-[#6c7365] hover:text-[#1e231d] -ml-2"
+        >
           <Link href="/reservations">
             <ArrowLeft className="h-4 w-4" />
             <span>Back to Reservations Updates</span>
@@ -60,14 +71,15 @@ export default function LongTermReservationsPage() {
         </Button>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="font-serif text-2xl font-bold tracking-tight text-[#1e231d] md:text-3xl">
+            <h1 className="font-serif text-2xl font-bold tracking-tight text-[#1c221a] md:text-3xl">
               Long-Term Reservations
             </h1>
-            <p className="text-sm text-[#6c7365]">
-              Extended planning window, upcoming 2026–2027 safari bookings, lodge allocations, and hold cutoffs.
+            <p className="text-sm text-[#6c7465]">
+              Extended planning window, upcoming 2026–2027 safari bookings,
+              lodge allocations, and hold cutoffs.
             </p>
           </div>
-          <Button className="bg-[#4a5441] text-white hover:bg-[#3d4535]">
+          <Button className="bg-[#4a5441] text-white hover:bg-[#3d4535] shadow-xs text-xs">
             Export Calendar
           </Button>
         </div>
@@ -76,34 +88,58 @@ export default function LongTermReservationsPage() {
       {/* Grid of Long-Term Bookings */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {longTermReservations.map((res) => (
-          <Card key={res.client} className="border-[#e5e7e0] shadow-xs">
-            <CardHeader className="pb-3">
+          <Card
+            key={res.client}
+            className="border-[#e2e6dc] bg-white shadow-2xs"
+          >
+            <CardHeader className="p-4 pb-3 border-b border-[#e8ece2] bg-[#fafbf8]">
               <div className="flex items-center justify-between">
-                <Badge variant={res.status.includes("Provisional") ? "sage" : "outline"}>
+                <Badge
+                  variant={
+                    res.status.includes("Provisional") ? "sage" : "outline"
+                  }
+                  className="text-[10px]"
+                >
                   {res.status}
                 </Badge>
-                <span className="font-serif font-bold text-sm text-[#2d3427]">{res.value}</span>
+                <span className="font-serif font-bold text-sm text-[#2d3427]">
+                  {res.value}
+                </span>
               </div>
-              <CardTitle className="font-serif text-lg mt-2">{res.client}</CardTitle>
-              <CardDescription>{res.destination}</CardDescription>
+              <CardTitle className="font-serif text-lg font-bold text-[#1c221a] mt-2">
+                {res.client}
+              </CardTitle>
+              <CardDescription className="text-xs text-[#6c7465]">
+                {res.destination}
+              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3 text-xs">
-              <div className="rounded-lg bg-[#f9faf7] border border-[#e8ece3] p-3 space-y-1.5 text-[#555d4e]">
+            <CardContent className="p-4 space-y-3 text-xs">
+              <div className="rounded-lg bg-[#fafbf8] border border-[#e8ece2] p-3 space-y-1.5 text-[#555d4e]">
                 <div className="flex justify-between">
-                  <span className="font-medium text-[#6c7365]">Dates:</span>
-                  <span className="font-semibold text-[#1e231d]">{res.dates}</span>
+                  <span className="font-medium text-[#6c7465]">Dates:</span>
+                  <span className="font-semibold text-[#1c221a]">
+                    {res.dates}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium text-[#6c7365]">Party:</span>
+                  <span className="font-medium text-[#6c7465]">Party:</span>
                   <span>{res.pax}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium text-[#6c7365]">Lodge / Camp:</span>
-                  <span className="font-medium text-[#1e231d]">{res.lodge}</span>
+                  <span className="font-medium text-[#6c7465]">
+                    Lodge / Camp:
+                  </span>
+                  <span className="font-medium text-[#1c221a]">
+                    {res.lodge}
+                  </span>
                 </div>
                 <div className="flex justify-between border-t border-[#e5e9df] pt-1.5">
-                  <span className="font-medium text-[#8f4738]">Deposit Due:</span>
-                  <span className="font-bold text-[#8f4738]">{res.depositDue}</span>
+                  <span className="font-medium text-[#8f4738]">
+                    Deposit Due:
+                  </span>
+                  <span className="font-bold text-[#8f4738]">
+                    {res.depositDue}
+                  </span>
                 </div>
               </div>
             </CardContent>
@@ -111,5 +147,5 @@ export default function LongTermReservationsPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
